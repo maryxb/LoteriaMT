@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Loteria
 {
-    public class Class1
+    public enum TipoPremio
     {
+        Sena = 6,
+        Quina = 5,
+        Quadra = 4
     }
 }

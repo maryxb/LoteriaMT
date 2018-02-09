@@ -1,0 +1,142 @@
+﻿using System;
+using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Text;
+
+namespace Loteria.Tests
+{
+    [TestClass]
+    public class UnitTestJogo
+    {
+
+        int contSena, contQuina, contQuadra = 0;
+
+        [TestMethod]
+        public void DeveCriarMegaSena()
+        {
+            var ms = new MegaSena();
+
+            var numeros = new List<int> { 1, 2, 3, 4, 5, 6 };
+            var jogadores = new List<string> { "João", "Maria" };
+
+            ms.CriarJogo(numeros, jogadores, 1);
+
+            Assert.IsNotNull(ms);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void DeveVerificarNumeroRepetidos()
+        {
+            var ms = new MegaSena();
+
+            var numeros = new List<int> { 1, 1, 3, 3, 5, 5 };
+            var jogadores = new List<string> { "João", "Maria" };
+
+            ms.CriarJogo(numeros, jogadores, 1);
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void DeveVerificarFaixaDeNumeros()
+        {
+            var ms = new MegaSena();
+
+            var numeros = new List<int> { 0, 80, 3, 3, 5, 5 };
+            var jogadores = new List<string> { "João", "Maria" };
+
+            ms.CriarJogo(numeros, jogadores, 1);
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        public void DeveSortearSeisNumerosDiferentes()
+        {
+            var ms = new MegaSena();
+
+            var sorteio = ms.SorteiaNumeros();
+
+            Assert.AreEqual(6, sorteio.Count);
+        }
+
+        [TestMethod]
+        public void DeveCriarListaDeJogosESortear()
+        {
+
+            List<MegaSena> listaJogosMegaSena = new List<MegaSena>();
+
+            //for (int i = 0; i < 10000; i++)
+            //{
+            //    var jogadores = new List<string> { "João", "Maria" };
+            //    var jogo = new MegaSena();
+
+            //    jogo.CriarJogo(SorteiaNumeros(), jogadores, i);
+
+            //    listaJogosMegaSena.Add(jogo);
+            //}
+
+            var megasena = new MegaSena();
+            megasena.CriarJogo(new List<int> { 7, 10, 19, 29, 33, 60 }, new List<string> { "João", "Maria" }, 10001);
+
+            listaJogosMegaSena.Add(megasena);
+
+
+            //Sorteio Mega Sena
+            var ms = new MegaSena();
+            var numerosGanhadores = new List<int> { 7, 10, 19, 29, 33, 60 };
+            var ganhadores = new List<Ganhador>();
+            int acertos = 0;
+
+            foreach (var item in (List<MegaSena>)listaJogosMegaSena)
+            {
+                acertos = item.Numeros.Intersect(numerosGanhadores).Count();
+
+                switch (acertos)
+                {
+                    case 6:
+                        ganhadores.Add(new Ganhador(TipoPremio.Sena, 1000000, item));
+                        contSena++;
+                        break;
+                    case 5:
+                        ganhadores.Add(new Ganhador(TipoPremio.Quina, 500000, item));
+                        contQuina++;
+                        break;
+                    case 4:
+                        ganhadores.Add(new Ganhador(TipoPremio.Quadra, 40000, item));
+                        contQuadra++;
+                        break;
+                }
+            }
+
+
+
+        }
+
+
+
+        public List<int> SorteiaNumeros()
+        {
+            var cont = 0;
+            var numero = 0;
+            var numerosSorteados = new List<int>();
+
+            var rand = new Random();
+
+            while (cont < 6)
+            {
+                numero = rand.Next(1, 60);
+                if (!numerosSorteados.Contains(numero))
+                {
+                    numerosSorteados.Add(numero);
+                    cont++;
+                }
+            }
+
+            return numerosSorteados;
+        }
+
+    }
+}

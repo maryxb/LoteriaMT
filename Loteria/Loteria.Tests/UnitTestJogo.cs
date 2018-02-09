@@ -10,7 +10,6 @@ namespace Loteria.Tests
     [TestClass]
     public class UnitTestJogo
     {
-
         int contSena, contQuina, contQuadra = 0;
 
         [TestMethod]
@@ -62,29 +61,36 @@ namespace Loteria.Tests
             Assert.AreEqual(6, sorteio.Count);
         }
 
+        //Deverá mostrar os Acertadores da Sena, Quina e Quadra. 
         [TestMethod]
         public void DeveCriarListaDeJogosESortear()
         {
-
             List<MegaSena> listaJogosMegaSena = new List<MegaSena>();
 
             //for (int i = 0; i < 10000; i++)
             //{
             //    var jogadores = new List<string> { "João", "Maria" };
             //    var jogo = new MegaSena();
-
             //    jogo.CriarJogo(SorteiaNumeros(), jogadores, i);
-
             //    listaJogosMegaSena.Add(jogo);
             //}
 
-            var megasena = new MegaSena();
-            megasena.CriarJogo(new List<int> { 7, 10, 19, 29, 33, 60 }, new List<string> { "João", "Maria" }, 10001);
+            //Ganhador Sena
+            var jogoSena = new MegaSena();
+            jogoSena.CriarJogo(new List<int> { 7, 10, 19, 29, 33, 60 }, new List<string> { "João", "Maria" }, 1);
+            listaJogosMegaSena.Add(jogoSena);
 
-            listaJogosMegaSena.Add(megasena);
+            //Ganhador Quina
+            var jogoQuina = new MegaSena();
+            jogoQuina.CriarJogo(new List<int> { 5, 10, 19, 29, 33, 60 }, new List<string> { "João", "Maria" }, 2);
+            listaJogosMegaSena.Add(jogoQuina);
 
+            //Ganhador Quadra
+            var jogoQuadra = new MegaSena();
+            jogoQuadra.CriarJogo(new List<int> { 5, 1, 19, 29, 33, 60 }, new List<string> { "João", "Maria" }, 3);
+            listaJogosMegaSena.Add(jogoQuadra);
 
-            //Sorteio Mega Sena
+            //Sorteio
             var ms = new MegaSena();
             var numerosGanhadores = new List<int> { 7, 10, 19, 29, 33, 60 };
             var ganhadores = new List<Ganhador>();
@@ -110,12 +116,10 @@ namespace Loteria.Tests
                         break;
                 }
             }
+            int totalGanhadores = contSena + contQuina + contQuadra;
 
-
-
+            Assert.AreEqual(3, totalGanhadores);
         }
-
-
 
         public List<int> SorteiaNumeros()
         {
@@ -137,6 +141,5 @@ namespace Loteria.Tests
 
             return numerosSorteados;
         }
-
     }
 }

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loteria.Domain", "Loteria\L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loteria.Tests", "Loteria.Tests\Loteria.Tests.csproj", "{F50F8DBA-1A4D-4C9A-A5A1-2B250E0C7D00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loteria.Api", "Loteria.Api\Loteria.Api.csproj", "{28BA207E-77A3-40BA-AE9B-41BAEF8CF9B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loteria.Application", "Loteria.Application\Loteria.Application.csproj", "{21DDC22F-7402-4797-984D-C1782452F8A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F50F8DBA-1A4D-4C9A-A5A1-2B250E0C7D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F50F8DBA-1A4D-4C9A-A5A1-2B250E0C7D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F50F8DBA-1A4D-4C9A-A5A1-2B250E0C7D00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28BA207E-77A3-40BA-AE9B-41BAEF8CF9B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28BA207E-77A3-40BA-AE9B-41BAEF8CF9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28BA207E-77A3-40BA-AE9B-41BAEF8CF9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28BA207E-77A3-40BA-AE9B-41BAEF8CF9B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21DDC22F-7402-4797-984D-C1782452F8A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21DDC22F-7402-4797-984D-C1782452F8A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21DDC22F-7402-4797-984D-C1782452F8A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21DDC22F-7402-4797-984D-C1782452F8A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,12 +15,21 @@ namespace Loteria.Application.Services
         {
             listaJogosMegaSena = new List<MegaSena>();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 9; i++)
             {
                 var jogadores = new List<string> { "João", "Maria" };
                 var jogo = new MegaSena();
                 
                 jogo.CriarJogo(jogo.SorteiaNumeros(), jogadores, i);
+
+                //acertos = item.Numeros.Intersect(numerosGanhadores).Count();
+                //Verificar se existe algum jogo igual em uma lista
+                var duplicado = listaJogosMegaSena.Intersect(jogo);
+                foreach (var item in listaJogosMegaSena)
+                {
+
+                }
+
 
                 listaJogosMegaSena.Add(jogo);
             }
@@ -31,9 +40,10 @@ namespace Loteria.Application.Services
             throw new NotImplementedException();
         }
 
-        public void CriarMegaSena(MegaSena megaSena)
+        public List<MegaSena> CriarMegaSena(MegaSena megaSena)
         {
             listaJogosMegaSena.Add(megaSena);
+            return listaJogosMegaSena;
         }
 
         public List<MegaSena> ListarMegaSenas()

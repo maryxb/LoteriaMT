@@ -51,23 +51,23 @@ namespace Loteria.Domain
         //Mega sena pode sortear 6 números, por isso não está na class Jogo
         public List<int> SorteiaNumeros()
         {
-            var cont = 0;
-            var numero = 0;
             var numerosSorteados = new List<int>();
 
-            var rand = new Random();
+            Random rand = new Random();
 
-            while (cont < 6)
+            while (numerosSorteados.Count < 6)
             {
-                numero = rand.Next(1, 60);
-                if (!numerosSorteados.Contains(numero))
-                {
-                    numerosSorteados.Add(numero);
-                    cont++;
-                }
+                int numeroSorteado = rand.Next(1, 60 + 1);
+
+                // Número já foi sorteado? Então sorteamos novamente até o número não ter sido sorteado ainda.
+                while (numerosSorteados.Contains(numeroSorteado))
+                    numeroSorteado = rand.Next(1, 60 + 1);
+
+                numerosSorteados.Add(numeroSorteado);
             }
 
             return numerosSorteados;
         }
+
     }
 }

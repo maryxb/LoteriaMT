@@ -1,0 +1,94 @@
+﻿<!-- Start: Header -->
+<header class="navbar navbar-fixed-top">
+    <div class="navbar-branding">
+        <a class="navbar-brand" href="#/dashboard.html">
+            Sorteios da <b>Loteria</b>
+        </a>
+        <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
+    </div>
+</header>
+<!-- End: Header -->
+<!-- Start: Sidebar -->
+<aside id="sidebar_left" class="nano nano-primary affix">
+
+    <!-- Start: Sidebar Left Content -->
+    <div class="sidebar-left-content nano-content">
+
+        <!-- Start: Sidebar Header -->
+        <header class="sidebar-header">
+        </header>
+        <!-- End: Sidebar Header -->
+
+        <!-- Start: Sidebar Menu -->
+        <ul class="nav sidebar-menu">
+            <li class="sidebar-label pt20">Menu</li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard">
+                    <span class="glyphicon glyphicon-home"></span>
+                    <span class="sidebar-title">Dashboard</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="manutencao">
+                    <span class="glyphicon glyphicon-globe"></span>
+                    <span class="sidebar-title">Manutenção</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="aposta">
+                    <span class="glyphicon glyphicon-globe"></span>
+                    <span class="sidebar-title">Aposta</span>
+                </a>
+            </li>
+        </ul>
+        <!-- End: Sidebar Menu -->
+
+        <!-- Start: Sidebar Collapse Button -->
+        <div class="sidebar-toggle-mini">
+            <a href="javascript:void(0);">
+                <span class="fa fa-sign-out"></span>
+            </a>
+        </div>
+        <!-- End: Sidebar Collapse Button -->
+
+    </div>
+    <!-- End: Sidebar Left Content -->
+
+</aside>
+
+<!-- Start: Content-Wrapper -->
+<section id="content_wrapper">
+
+    <!-- Start: Topbar-Dropdown -->
+        
+    <!-- End: Topbar-Dropdown -->
+    <!-- Start: Topbar -->
+    <header id="topbar" ui-view="top">
+        <div class="topbar-left">
+            <ol class="breadcrumb">
+                <li class="crumb-active">
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li class="crumb-icon">
+                    <a href="dashboard.html">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </a>
+                </li>
+                <li class="crumb-link">
+                    <a ui-sref="dashboard">Home</a>
+                </li>
+                <li class="crumb-trail">Dashboard</li>
+            </ol>
+        </div>
+
+    </header>
+    <!-- End: Topbar -->
+    <!-- Begin: Content -->
+    <section id="content" class="anim-in-out anim-slide-below-fade" data-anim-speed="500" ui-view="content"></section>
+    <!-- End: Content -->
+
+</section>
+
+<!-- Start: Right Sidebar -->
+<aside id="sidebar_right" class="nano affix" ui-view="sidebar"></aside>
+<!-- End: Right Sidebar -->

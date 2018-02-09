@@ -12,7 +12,7 @@ namespace Loteria.Application.Services
         void CriarLotoFacil();
 
         List<MegaSena> ListarMegaSenas();
-        void CriarMegaSena(MegaSena megaSena);
+        List<MegaSena> CriarMegaSena(MegaSena megaSena);
         List<Ganhador> SortearMegaSena();
 
     }

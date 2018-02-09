@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loteria.Domain", "Loteria.Domain\Loteria.Domain.csproj", "{2ECEB942-49B4-4B3B-873C-5B62B7059F74}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loteria.Api", "Loteria.Api\Loteria.Api.csproj", "{28BA207E-77A3-40BA-AE9B-41BAEF8CF9B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loteria.Application", "Loteria.Application\Loteria.Application.csproj", "{21DDC22F-7402-4797-984D-C1782452F8A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loteria.Web", "Loteria.Web\Loteria.Web.csproj", "{7EE9FB1C-8133-4FED-AB24-0C334E19B050}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{21DDC22F-7402-4797-984D-C1782452F8A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21DDC22F-7402-4797-984D-C1782452F8A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21DDC22F-7402-4797-984D-C1782452F8A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE9FB1C-8133-4FED-AB24-0C334E19B050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE9FB1C-8133-4FED-AB24-0C334E19B050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE9FB1C-8133-4FED-AB24-0C334E19B050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE9FB1C-8133-4FED-AB24-0C334E19B050}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A461F70C-58C9-4124-9C91-9ACAEC5BD258}
 	EndGlobalSection
 EndGlobal

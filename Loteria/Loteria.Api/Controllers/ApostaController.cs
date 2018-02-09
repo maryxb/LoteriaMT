@@ -1,5 +1,6 @@
 ﻿using Loteria.Api.Models;
 using Loteria.Application.Services;
+using Loteria.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;

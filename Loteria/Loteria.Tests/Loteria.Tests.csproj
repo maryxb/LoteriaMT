@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Loteria\Loteria.Domain.csproj">
+    <ProjectReference Include="..\Loteria.Domain\Loteria.Domain.csproj">
       <Project>{2eceb942-49b4-4b3b-873c-5b62b7059f74}</Project>
       <Name>Loteria.Domain</Name>
     </ProjectReference>

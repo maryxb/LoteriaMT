@@ -7,14 +7,14 @@
   border-top-color: #5d9cec;
 }
 .admin-form .panel-primary > .panel-heading:before {
-  background-color: #4a89dc;
+  background-color: #62ab58;
 }
 .admin-form .panel-primary.heading-border:before,
 .admin-form .panel-primary .heading-border:before {
-  background-color: #4a89dc;
+  background-color: #62ab58;
 }
 .admin-form .bg-primary {
-  background-color: #4a89dc;
+  background-color: #62ab58;
 }
 .admin-form .bg-primary.light {
   background-color: #5d9cec;
@@ -36,29 +36,29 @@
 .admin-form .option-primary input:focus + .checkbox,
 .admin-form .option-primary input:checked + .radio,
 .admin-form .option-primary input:focus + .radio {
-  border-color: #4a89dc;
+  border-color: #62ab58;
 }
 .admin-form .option-primary input:checked + .radio:before,
 .admin-form .option-primary input:focus + .radio:before {
-  background: #4a89dc;
+  background: #62ab58;
 }
 .admin-form .option-primary input:checked + .checkbox:before,
 .admin-form .option-primary input:focus + .checkbox:before {
-  border-color: #4a89dc;
+  border-color: #62ab58;
 }
 .admin-form .switch-primary > input:checked + label {
-  background: #4a89dc;
-  border-color: #4a89dc;
+  background: #62ab58;
+  border-color: #62ab58;
 }
 .admin-form .switch-primary > input:checked + label:after {
-  color: #4a89dc;
+  color: #62ab58;
 }
 .admin-form .switch-primary > input:checked:focus + label {
   background: #2e76d6;
   border-color: #2e76d6;
 }
 .admin-form .btn-primary {
-  background-color: #4a89dc;
+  background-color: #62ab58;
 }
 .admin-form .btn-primary:hover,
 .admin-form .btn-primary:focus {
@@ -76,22 +76,22 @@
   text-shadow: 0 1px rgba(0, 0, 0, 0.08);
 }
 .admin-form .slider-wrapper.slider-primary .ui-slider .ui-slider-range {
-  background-color: #4a89dc;
+  background-color: #62ab58;
 }
 .admin-form .slider-wrapper.slider-primary .ui-slider .ui-slider-handle {
-  border-color: #4a89dc;
+  border-color: #62ab58;
 }
 .admin-form .slider-wrapper.slider-primary .ui-slider .ui-slider-handle:before {
-  background-color: #4a89dc;
+  background-color: #62ab58;
 }
 .admin-form.theme-primary .section-divider span {
-  color: #4a89dc;
+  color: #62ab58;
 }
 .admin-form.theme-primary .tagline span {
-  color: #4a89dc;
+  color: #62ab58;
 }
 .admin-form.theme-primary .theme-link {
-  color: #4a89dc;
+  color: #62ab58;
 }
 .admin-form.theme-primary .gui-input:hover,
 .admin-form.theme-primary .gui-textarea:hover,
@@ -118,7 +118,7 @@
 }
 .admin-form.theme-primary .gui-input:focus ~ .field-icon i,
 .admin-form.theme-primary .gui-textarea:focus ~ .field-icon i {
-  color: #4a89dc;
+  color: #62ab58;
 }
 .admin-form.theme-primary .select-multiple select:focus,
 .admin-form.theme-primary .gui-input:focus ~ .input-footer,
@@ -127,12 +127,12 @@
   border-color: #5d9cec;
 }
 .admin-form.theme-primary .select > select:focus + .arrow {
-  color: #4a89dc;
+  color: #62ab58;
 }
 .admin-form.theme-primary .rating:hover .rating-star:hover,
 .admin-form.theme-primary .rating:hover .rating-star:hover ~ .rating-star,
 .admin-form.theme-primary .rating-input:checked ~ .rating-star {
-  color: #4a89dc;
+  color: #62ab58;
 }
 .admin-form.theme-primary .rating-star,
 .admin-form.theme-primary .rating:hover .rating-star {
@@ -141,7 +141,7 @@
 .admin-form.theme-primary .ui-datepicker .ui-datepicker-prev,
 .admin-form.theme-primary .ui-datepicker .ui-datepicker-next,
 .admin-form.theme-primary .ui-datepicker .ui-datepicker-title {
-  color: #4a89dc;
+  color: #62ab58;
 }
 .admin-form.theme-primary .ui-datepicker-today a,
 .admin-form.theme-primary .ui-datepicker-today a:hover,
@@ -149,20 +149,20 @@
   background: #9fc1ed !important;
 }
 .admin-form.theme-primary .ui-datepicker .ui-state-active {
-  background: #4a89dc !important;
+  background: #62ab58 !important;
 }
 .admin-form.theme-primary .ui-datepicker .ui-timepicker-div .ui-slider .ui-slider-handle.ui-state-active {
   background: #FFF !important;
 }
 .admin-form.theme-primary .ui-datepicker .ui-timepicker-div .ui-slider .ui-slider-handle {
-  border-color: #4a89dc;
+  border-color: #62ab58;
 }
 .admin-form.theme-primary .ui-datepicker .ui-timepicker-div .ui-slider .ui-slider-handle:before {
-  background-color: #4a89dc;
+  background-color: #62ab58;
 }
 .admin-form.theme-primary .wizard .steps li a,
 .admin-form.theme-primary .wizard .actions li a {
-  background-color: #4a89dc;
+  background-color: #62ab58;
 }
 .admin-form.theme-primary .wizard .steps li.current a {
   background-color: #2e76d6;

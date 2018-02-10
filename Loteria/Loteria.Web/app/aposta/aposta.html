@@ -6,20 +6,14 @@
                     <span class="panel-icon"><i class="fa fa-file"></i></span>
                     <span class="panel-title"> Apostas </span>
                 </div>
-                <form name="forms.editForm" id="form-dados" class="form-horizontal" role="form" autocomplete="off" block-ui="blockForm">
+                <form name="vm.editForm" id="form-dados" class="form-horizontal" role="form" autocomplete="off" block-ui="blockForm">
                     <div class="col-md-12">
                         <div ng-class="vm.AlertClassDiv" ng-show="vm.AlertMessage.length > 0">
                             <span><i ng-class="vm.AlertClassI"></i> <strong> {{ vm.AlertMessage  }}</strong></span>
                         </div>
                     </div>
                     <br />
-                    <div class="panel-body">
-                        <!--<div class="alert alert-info" role="alert" ng-if="vm.MensagemGrid == true">
-                            <strong>
-                                Informação:
-                            </strong><br />
-                            Não foi encontrado atividades com o filtro informado. Por favor, tente novamente.
-                        </div>-->
+                    <div class="panel-body" style="border: none;">
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
@@ -27,22 +21,57 @@
                                     <input type="text" name="Numeros" class="form-control" ng-model="vm.Dados.numeros" required>
                                 </div>
                             </div>
-
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label>Nome do(s) Jogador(es). (Entre vírgula)</label>
                                     <input type="text" name="Jogadores" class="form-control" ng-model="vm.Dados.jogadores" required>
                                 </div>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="pull-right">
-                                    <button type="button" class="btn btn-primary" style="margin-right: 13px" ng-click="vm.jogar();"><i class="fa fa-search"></i> Jogar!</button>
-                                </div>
+                                <button type="button" class="btn btn-primary" style="margin-right: 13px" ng-click="vm.jogar();"><i class="fa fa-search"></i> Jogar!</button>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-success" style="margin-right: 13px" ng-click="vm.sortear();"><i class="fa fa-search"></i> Fazer o Sorteio!</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <h1>Números Sorteados:</h1>
+                            <h2>{{vm.sorteioGanhador.NumerosSorteados}}</h2>
+                        </div>
+                        <div class="col-md-3"></div>
+
+                        <div class="col-md-8"> <!--ng-if="vm.ganhadores.length > 0">-->
+                            <h3>Aposta(s) Ganhadora(s)</h3>
+
+                            <table class="table table-hover table-condensed table-striped" datatable="ng">
+                                <thead>
+                                    <tr class="primary">
+                                        <th style="text-align:center;">Código do Jogo</th>
+                                        <th style="text-align:center;">Jogador(res)</th>
+                                        <th style="text-align:center;">Prêmio</th>
+                                        <th style="text-align:center;">Valor</th>
+                                        <th style="text-align:center;">Números</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in vm.ganhadores">
+                                        <td style="text-align:center;">{{ item.Jogo.IdJogo }} </td>
+                                        <td style="text-align:center;">{{ item.Jogo.Jogadores }} </td>
+                                        <td style="text-align:center;">{{ item.TipoPremio }} </td>
+                                        <td style="text-align:center;">{{ item.ValorPremio }} </td>
+                                        <td style="text-align:center;">{{ item.Jogo.Numeros }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
                         <hr />
                         <br />
                         <table class="table table-hover table-condensed table-striped" datatable="ng">

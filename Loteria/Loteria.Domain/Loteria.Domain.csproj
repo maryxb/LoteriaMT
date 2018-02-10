@@ -45,6 +45,7 @@
     <Compile Include="MegaSena.cs" />
     <Compile Include="Ganhador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sorteio.cs" />
     <Compile Include="TipoPremio.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

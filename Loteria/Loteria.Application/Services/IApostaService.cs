@@ -13,7 +13,8 @@ namespace Loteria.Application.Services
 
         List<MegaSena> ListarMegaSenas();
         List<MegaSena> CriarMegaSena(MegaSena megaSena);
-        List<Ganhador> SortearMegaSena();
+        Sorteio SortearMegaSena();
+        List<Ganhador> RetornaGanhadores(Sorteio sorteio);
 
     }
 }

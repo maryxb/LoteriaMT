@@ -727,7 +727,7 @@ var Core = function(options) {
 }();
 
 // Global Library of Theme colors for Javascript plug and play use  
-var bgPrimary = '#4a89dc',
+var bgPrimary = '#62ab58',
    bgPrimaryL = '#5d9cec',
    bgPrimaryLr = '#83aee7',
    bgPrimaryD = '#2e76d6',

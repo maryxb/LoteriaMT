@@ -12,5 +12,6 @@ namespace Loteria.Api.Models
         public string TipoPremio { get; set; }
         public decimal ValorPremio { get; set; }
         public MegaSenaModel Jogo { get; set; }
+        public List<int> NumerosSorteados { get; set; }
     }
 }

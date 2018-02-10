@@ -22,7 +22,5 @@
         function listarJogosMegaSena() {
             return $http.post(common.makeUrl([apiRoute, 'listarJogosMegaSena']));
         }
-
-
     }
 })();

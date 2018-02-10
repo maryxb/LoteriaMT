@@ -13,6 +13,7 @@ namespace Loteria.Domain
         public TipoPremio TipoPremio { get; private set; }
         public decimal ValorPremio { get; private set; }
         public Jogo Jogo { get; private set; }
+        public List<int> NumerosSorteados { get; private set; }
 
         public Ganhador() {}
 

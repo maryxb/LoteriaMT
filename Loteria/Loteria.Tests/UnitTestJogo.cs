@@ -121,7 +121,7 @@ namespace Loteria.Tests
 
             Assert.AreEqual(3, totalGanhadores);
         }
-
+        
         public List<int> SorteiaNumeros()
         {
             var cont = 0;

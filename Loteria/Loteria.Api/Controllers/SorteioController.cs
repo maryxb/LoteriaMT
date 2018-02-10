@@ -21,15 +21,39 @@ namespace Loteria.Api.Controllers
             apostaService = new ApostaService();
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("sortearMegaSena")]
         public HttpResponseMessage SortearMegaSena()
         {
             try
             {
-                var ganhadores = apostaService.SortearMegaSena();
-                var model = new List<GanhadorModel>();
+                var sorteio = apostaService.SortearMegaSena();
 
+                var model = new SorteioModel()
+                {
+                    NumerosSorteados = sorteio.NumerosSorteados,
+                    Data = sorteio.Data
+                };
+
+                return Request.CreateResponse(HttpStatusCode.OK, model);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("verificaGanhadores")]
+        public HttpResponseMessage VerificaGanhadores(SorteioModel sorteioGanhador)
+        {
+            try
+            {
+                var sorteio = new Sorteio(sorteioGanhador.NumerosSorteados, sorteioGanhador.Data);
+
+                var ganhadores = apostaService.RetornaGanhadores(sorteio);
+
+                var model = new List<GanhadorModel>();
                 foreach (var item in ganhadores)
                 {
                     model.Add(new GanhadorModel()

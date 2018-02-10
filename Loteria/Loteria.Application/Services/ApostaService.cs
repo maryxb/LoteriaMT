@@ -15,21 +15,29 @@ namespace Loteria.Application.Services
         {
             listaJogosMegaSena = new List<MegaSena>();
 
-            for (int i = 0; i < 9; i++)
+            var igual = true;
+
+            //Inicia com jogos aleatórios
+            for (int i = 0; i < 50; i++)
             {
                 var jogadores = new List<string> { "João", "Maria" };
                 var jogo = new MegaSena();
-                
-                jogo.CriarJogo(jogo.SorteiaNumeros(), jogadores, i);
+                var numeros = jogo.SorteiaNumeros();
 
-                //acertos = item.Numeros.Intersect(numerosGanhadores).Count();
-                //Verificar se existe algum jogo igual em uma lista
-                var duplicado = listaJogosMegaSena.Intersect(jogo);
-                foreach (var item in listaJogosMegaSena)
+
+
+
+
+
+                if (i>0)
                 {
-
+                    while (listaJogosMegaSena[i - 1].Numeros.Union(numeros).ToList().Count() == 6)
+                    {
+                        numeros = jogo.SorteiaNumeros();
+                    }
                 }
 
+                jogo.CriarJogo(numeros, jogadores, i);
 
                 listaJogosMegaSena.Add(jogo);
             }
@@ -51,17 +59,20 @@ namespace Loteria.Application.Services
             return listaJogosMegaSena;
         }
 
-        public List<Ganhador> SortearMegaSena()
+        public Sorteio SortearMegaSena()
         {
-            //Sorteio Mega Sena
             var ms = new MegaSena();
-            var numerosGanhadores = ms.SorteiaNumeros();
+            return new Sorteio(ms.SorteiaNumeros());
+        }
+
+        public List<Ganhador> RetornaGanhadores(Sorteio sorteio)
+        {
             var ganhadores = new List<Ganhador>();
             int acertos = 0;
 
             foreach (var item in this.listaJogosMegaSena)
             {
-                acertos = item.Numeros.Intersect(numerosGanhadores).Count();
+                acertos = item.Numeros.Intersect(sorteio.NumerosSorteados).Count();
 
                 switch (acertos)
                 {

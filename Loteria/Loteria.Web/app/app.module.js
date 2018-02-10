@@ -36,9 +36,8 @@
         /*
          * Modules
          */
-        'app.dashboard',
-        'app.manutencao',
         'app.aposta'
+
     ]);
 
 
@@ -48,21 +47,21 @@
     app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 
         $stateProvider.
-            state('login', {
-                url: '/login',
-                templateUrl: 'app/account/login.html',
-                controller: 'loginController as vm'
-            }).
-            state('activateAccount', {
-                url: '/activate/:userId/:hashcode',
-                templateUrl: 'app/account/activate.html',
-                controller: 'activateAccountController as vm'
-            }).
-            state('createAccount', {
-                 url: '/signup',
-                 templateUrl: 'app/account/signup.html',
-                 controller: 'signUpController as vm'
-            }).
+            //state('login', {
+            //    url: '/login',
+            //    templateUrl: 'app/account/login.html',
+            //    controller: 'loginController as vm'
+            //}).
+            //state('activateAccount', {
+            //    url: '/activate/:userId/:hashcode',
+            //    templateUrl: 'app/account/activate.html',
+            //    controller: 'activateAccountController as vm'
+            //}).
+            //state('createAccount', {
+            //     url: '/signup',
+            //     templateUrl: 'app/account/signup.html',
+            //     controller: 'signUpController as vm'
+            //}).
             state('app', {
                 url: '',
                 abstract: true,
@@ -73,7 +72,7 @@
         $urlRouterProvider.otherwise(function ($injector, $location) {
             var $state = $injector.get('$state');
 
-            $state.go('dashboard');
+            $state.go('aposta');
         });
 
     }]);

@@ -124,23 +124,21 @@ namespace Loteria.Tests
         
         public List<int> SorteiaNumeros()
         {
-            var cont = 0;
-            var numero = 0;
-            var numerosSorteados = new List<int>();
+            int cont = 0,
+                numero = 0;
 
-            var rand = new Random();
-
+            var listaSorteio = new List<int>();
+            Random random = new Random();
             while (cont < 6)
             {
-                numero = rand.Next(1, 60);
-                if (!numerosSorteados.Contains(numero))
+                numero = random.Next(1, 60);
+                if (!listaSorteio.Contains(numero))
                 {
-                    numerosSorteados.Add(numero);
+                    listaSorteio.Add(numero);
                     cont++;
                 }
             }
-
-            return numerosSorteados;
+            return listaSorteio;
         }
     }
 }

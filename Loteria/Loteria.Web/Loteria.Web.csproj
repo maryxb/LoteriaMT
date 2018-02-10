@@ -455,11 +455,6 @@
     <Content Include="app\app.module.js" />
     <Content Include="app\config\config.js" />
     <Content Include="app\config\config.module.js" />
-    <Content Include="app\manutencao\crud.controller.js" />
-    <Content Include="app\manutencao\crud.html" />
-    <Content Include="app\manutencao\list.controller.js" />
-    <Content Include="app\manutencao\list.html" />
-    <Content Include="app\manutencao\manutencao.module.js" />
     <Content Include="app\services\core\common.js" />
     <Content Include="app\services\core\core.module.js" />
     <Content Include="app\services\core\logger.js" />

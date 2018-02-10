@@ -46,25 +46,35 @@
                 if (vm.Dados.numeros != undefined) vm.Dados.numeros = vm.Dados.numeros.split(',');
                 if (vm.Dados.jogadores != undefined) vm.Dados.jogadores = vm.Dados.jogadores.split(',');
             }
-            
+
             vm.formValid = common.validateForm(vm.editForm);
             if (vm.formValid) {
                 dsAposta
                     .criarMegaSena(vm.Dados)
-                    .then(function (result) {
-                        vm.listaJogos = result.data;
+                    .success(function (result) {
+                        vm.listaJogos = result;
                         vm.Dados.numeros = "";
                         vm.Dados.jogadores = "";
-                    
+
+                        vm.AlertClassI = 'fa fa-exclamation-triangle';
+                        vm.AlertClassDiv = 'alert alert-success';
+                        vm.AlertMessage = "Seu jogo foi salvo com sucesso";
+                    }).error(function (result) {
+                        vm.Dados.numeros = "";
+                        vm.Dados.jogadores = "";
+
+                        vm.AlertClassI = 'fa fa-exclamation-triangle';
+                        vm.AlertClassDiv = 'alert alert-danger';
+                        vm.AlertMessage = result.Message;
                     })
                     .finally(function () {
                         blocker.stop();
                     });
-            }
-            else {
-                vm.AlertClassI = 'fa fa-exclamation-triangle';
-                vm.AlertClassDiv = 'alert alert-danger';
-                vm.AlertMessage = "Os campos são obrigatórios";
+                } else {
+                    vm.AlertClassI = 'fa fa-exclamation-triangle';
+                    vm.AlertClassDiv = 'alert alert-danger';
+                    vm.AlertMessage = "Os campos são obrigatórios";
+                    blocker.stop();
             }
         }
 
@@ -73,16 +83,16 @@
             blocker.start();
 
             dsSorteio
-                .sortearMegaSena(vm.listaJogos)
-                .then(function (result) {
-                    vm.sorteioGanhador = result.data;
-                    console.log(vm.sorteioGanhador.length);
+                .sortearMegaSena()
+                .success(function (result) {
+                    vm.sorteioGanhador = result;
+                    vm.sorteioGanhador.ListaJogos = [];
+                    vm.sorteioGanhador.ListaJogos = vm.listaJogos;
 
                     dsSorteio
                         .verificaGanhadores(vm.sorteioGanhador)
-                        .then(function (result) {
-                            vm.ganhadores = result.data;
-                            console.log(vm.ganhadores);
+                        .success(function (result) {
+                            vm.ganhadores = result;
                         })
                         .finally(function () {
                             blocker.stop();

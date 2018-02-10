@@ -15,7 +15,7 @@
         };
         return service;
 
-        function sortearMegaSena(listaJogos) {
+        function sortearMegaSena() {
             return $http.post(common.makeUrl([apiRoute, 'sortearMegaSena']));
         }
 

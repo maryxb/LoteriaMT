@@ -15,26 +15,6 @@ namespace Loteria.Application.Services
         {
             listaJogosMegaSena = new List<MegaSena>();
 
-
-            //Inicia com jogos aleatórios
-            for (int i = 0; i < 50; i++)
-            {
-                var jogadores = new List<string> { "João", "Maria" };
-                var jogo = new MegaSena();
-                var numeros = jogo.SorteiaNumeros();
-
-                if (i>0)
-                {
-                    while (listaJogosMegaSena[i - 1].Numeros.Union(numeros).ToList().Count() == 6)
-                    {
-                        numeros = jogo.SorteiaNumeros();
-                    }
-                }
-
-                jogo.CriarJogo(numeros, jogadores, i);
-
-                listaJogosMegaSena.Add(jogo);
-            }
         }
 
         public void CriarLotoFacil()
@@ -50,6 +30,26 @@ namespace Loteria.Application.Services
 
         public List<MegaSena> ListarMegaSenas()
         {
+            //Inicia com jogos aleatórios
+            for (int i = 0; i < 1000; i++)
+            {
+                var jogadores = new List<string> { "João", "Maria" };
+                var jogo = new MegaSena();
+                var numeros = jogo.SorteiaNumeros();
+
+                if (i > 0)
+                {
+                    while (listaJogosMegaSena[i - 1].Numeros.Union(numeros).ToList().Count() == 6)
+                    {
+                        numeros = jogo.SorteiaNumeros();
+                    }
+                }
+
+                jogo.CriarJogo(numeros, jogadores, i);
+
+                listaJogosMegaSena.Add(jogo);
+            }
+
             return listaJogosMegaSena;
         }
 
@@ -64,7 +64,7 @@ namespace Loteria.Application.Services
             var ganhadores = new List<Ganhador>();
             int acertos = 0;
 
-            foreach (var item in this.listaJogosMegaSena)
+            foreach (var item in sorteio.ListaJogos)
             {
                 acertos = item.Numeros.Intersect(sorteio.NumerosSorteados).Count();
 

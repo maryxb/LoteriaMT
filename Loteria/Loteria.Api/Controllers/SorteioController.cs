@@ -49,7 +49,20 @@ namespace Loteria.Api.Controllers
         {
             try
             {
-                var sorteio = new Sorteio(sorteioGanhador.NumerosSorteados, sorteioGanhador.Data);
+                var listaJogos = new List<MegaSena>();
+                foreach (var item in sorteioGanhador.ListaJogos)
+                {
+                    listaJogos.Add(new MegaSena()
+                    {
+                        IdJogo = item.IdJogo,
+                        DataHora = item.DataHora,
+                        Jogadores = item.Jogadores,
+                        Numeros = item.Numeros
+                    });
+                }
+
+
+                var sorteio = new Sorteio(sorteioGanhador.NumerosSorteados, sorteioGanhador.Data, listaJogos);
 
                 var ganhadores = apostaService.RetornaGanhadores(sorteio);
 

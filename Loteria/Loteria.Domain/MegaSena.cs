@@ -23,8 +23,6 @@ namespace Loteria.Domain
 
             VerificaFaixaNumeros(numeros);
             VerificaNumeroRepetidos(numeros);
-
-
         }
 
         public void VerificaFaixaNumeros(List<int> numeros)
@@ -51,22 +49,22 @@ namespace Loteria.Domain
         //Mega sena pode sortear 6 números, por isso não está na class Jogo
         public List<int> SorteiaNumeros()
         {
-            var numerosSorteados = new List<int>();
+            int cont = 0,
+                numero = 0;
 
-            Random rand = new Random();
-
-            while (numerosSorteados.Count < 6)
+            var listaSorteio = new List<int>();
+            Random random = new Random();
+            while (cont < 6)
             {
-                int numeroSorteado = rand.Next(1, 60 + 1);
-
-                // Número já foi sorteado? Então sorteamos novamente até o número não ter sido sorteado ainda.
-                while (numerosSorteados.Contains(numeroSorteado))
-                    numeroSorteado = rand.Next(1, 60 + 1);
-
-                numerosSorteados.Add(numeroSorteado);
+                numero = random.Next(1, 60);
+                if (!listaSorteio.Contains(numero))
+                {
+                    listaSorteio.Add(numero);
+                    cont++;
+                }
             }
+            return listaSorteio;
 
-            return numerosSorteados;
         }
 
     }

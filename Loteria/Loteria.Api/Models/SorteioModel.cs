@@ -9,6 +9,7 @@ namespace Loteria.Api.Models
     {
         public List<int> NumerosSorteados { get; set; }
         public DateTime Data { get; set; }
+        public List<MegaSenaModel> ListaJogos { get; set; }
 
     }
 }

@@ -10,6 +10,6 @@ namespace Loteria.Api.Models
         public int IdJogo { get; set; }
         public List<int> Numeros { get; set; }
         public List<string> Jogadores { get; set; }
-        //public DateTime DataHora { get; set; }
+        public DateTime DataHora { get; set; }
     }
 }

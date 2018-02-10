@@ -15,7 +15,6 @@ namespace Loteria.Application.Services
         {
             listaJogosMegaSena = new List<MegaSena>();
 
-            var igual = true;
 
             //Inicia com jogos aleatórios
             for (int i = 0; i < 50; i++)
@@ -23,11 +22,6 @@ namespace Loteria.Application.Services
                 var jogadores = new List<string> { "João", "Maria" };
                 var jogo = new MegaSena();
                 var numeros = jogo.SorteiaNumeros();
-
-
-
-
-
 
                 if (i>0)
                 {

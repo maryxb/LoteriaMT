@@ -55,6 +55,7 @@
                         vm.listaJogos = result.data;
                         vm.Dados.numeros = "";
                         vm.Dados.jogadores = "";
+                    
                     })
                     .finally(function () {
                         blocker.stop();
@@ -75,18 +76,19 @@
                 .sortearMegaSena(vm.listaJogos)
                 .then(function (result) {
                     vm.sorteioGanhador = result.data;
+                    console.log(vm.sorteioGanhador.length);
 
                     dsSorteio
                         .verificaGanhadores(vm.sorteioGanhador)
                         .then(function (result) {
                             vm.ganhadores = result.data;
+                            console.log(vm.ganhadores);
                         })
                         .finally(function () {
                             blocker.stop();
                         });
                 })
                 .finally(function () {
-                    blocker.stop();
                 });
         }
     }
